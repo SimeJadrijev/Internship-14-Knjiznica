@@ -3,6 +3,7 @@
 
 /* sections */
 @import "./styles/sections/header.css";
+@import "./styles/sections/add-book-form.css";
 
 /* general */
 
@@ -14,4 +15,12 @@
 
 body{
   background-color: aqua;
+  display: flex;
+  align-items: center;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
