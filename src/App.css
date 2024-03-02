@@ -1,0 +1,17 @@
+/* definitions */
+@import "./styles/definitions/fonts.css";
+
+/* sections */
+@import "./styles/sections/header.css";
+
+/* general */
+
+*{
+    font-family: "Fuse";
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+  background-color: aqua;
+}
