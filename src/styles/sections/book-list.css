@@ -1,0 +1,33 @@
+.book-card{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 20px;
+    height: 300px;
+    border: 2px solid darkturquoise;
+    border-radius: 10px;
+
+}
+.book-card img{
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+.book-card-right{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: center;
+    align-items: flex-start;
+    width: fit-content;
+    max-width: 500px;
+    padding: 10px;
+}
+
+.book-card-right span{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 200;
+}

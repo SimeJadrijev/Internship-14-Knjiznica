@@ -4,6 +4,7 @@
 /* sections */
 @import "./styles/sections/header.css";
 @import "./styles/sections/add-book-form.css";
+@import "./styles/sections/book-list.css";
 
 /* general */
 

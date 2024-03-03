@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { v4 as uuidv4 } from "uuid";
 
-const AddBookForm = () => {
+const AddBookForm = ({ onAdd }) => {
 
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
@@ -28,13 +28,13 @@ const AddBookForm = () => {
           imageUrl,
         };
         onAdd(newBook);
-        setTitle('');
-        setAuthor('');
-        setPublisher('');
-        setPublicationYear('');
-        setGenre('');
-        setNumberOfCopies('');
-        setImageUrl('');
+        setTitle("");
+        setAuthor("");
+        setPublisher("");
+        setPublicationYear("");
+        setGenre("");
+        setNumberOfCopies("");
+        setImageUrl("");
       };
 
     return (
