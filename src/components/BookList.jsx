@@ -1,6 +1,6 @@
 import FiltersContainer from "./FiltersContainer";
 import data from "./data";
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 const BookList = ({ booksList, setBooksList }) => {
     const [sortedBooks, setSortedBooks] = useState(
@@ -30,19 +30,14 @@ const BookList = ({ booksList, setBooksList }) => {
 
     const handleReturnBook = (bookId) => {
         const bookToReturn = sortedBooks.find((book) => book.id === bookId);
-        if (!bookToReturn) {
-            alert("Knjiga nije pronađena.");
-            return;
+        if (bookToReturn) {
+            const updatedBooks = sortedBooks.map((book) =>
+                book.id === bookId ? { ...book, numberOfCopies: book.numberOfCopies + 1 } : book
+            );
+            setSortedBooks(updatedBooks);
+            alert(`Knjiga "${bookToReturn.title}" je uspješno vraćena.`);
         }
-
-        const updatedBooks = sortedBooks.map((book) =>
-            book.id === bookId ? { ...book, numberOfCopies: book.numberOfCopies + 1 } : book
-        );
-        setSortedBooks(updatedBooks);
-        alert(`Knjiga "${bookToReturn.title}" je uspješno vraćena.`);
     };
-
-
 
     return (
         <>
@@ -50,7 +45,7 @@ const BookList = ({ booksList, setBooksList }) => {
 
             <div className="books-container">
                 {sortedBooks.map((book) => (
-                    <div key={book.id} className={`book-card ${book.numberOfCopies === 0 ? 'zero-copies' : ''}`}>
+                    <div key={book.id} className="book-card">
                         <div className="image-container">
                             <img src={book.imageURL} alt={`${book.title} image`} />
                         </div>
@@ -87,7 +82,7 @@ const BookList = ({ booksList, setBooksList }) => {
                                 <button
                                     id="return-book-btn"
                                     onClick={() => handleReturnBook(book.id)}
-                                    
+                                    disabled={book.numberOfCopies === 0}
                                 >
                                     vrati
                                 </button>
