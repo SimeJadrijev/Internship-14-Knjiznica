@@ -1,7 +1,7 @@
 import FiltersContainer from "./FiltersContainer";
 import data from "./data";
 
-const BookList = ({ booksList }) => {
+const BookList = ({ booksList, setBooksList }) => {
 
     // const sortedBooks = books.sort( (a,b) => {
     //     if (a.author !== b.author)
@@ -30,7 +30,7 @@ const BookList = ({ booksList }) => {
 
             <h2 className="section-title">SVE KNJIGE</h2>
 
-           <FiltersContainer />
+           <FiltersContainer booksList={booksList} setBooksList={(value) => setBooksList(value)} />
 
             <div className="books-container">
 

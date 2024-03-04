@@ -16,7 +16,6 @@ function App() {
 
     setBooksList(oldBooksList => [ ...oldBooksList, newBook ]);
 
-    console.log(booksList);
 
     // localStorage.setItem("books", JSON.stringify(booksList));
 
@@ -32,7 +31,7 @@ function App() {
     <>
       <Header />
       <AddBookForm onAdd={handleAddBook} />
-      <BookList booksList={booksList} />
+      <BookList booksList={booksList} setBooksList={(value) => setBooksList(value)} />
       <br />
       <br />
       <br />
