@@ -63,16 +63,7 @@ const AddBookForm = ({ onAdd }) => {
                 </div>
                 <div className="form-control">
                     <label>Žanr</label>
-                    <GenreSelect message={"Odaberite žanr"} value={genre} onChange={(e) => setGenre(e.target.value)} />
-                    {/* <select value={genre} onChange={(e) => setGenre(e.target.value)}>
-                        <option value="">Odaberite žanr</option>
-                        <option value="roman">Roman</option>
-                        <option value="poezija">Poezija</option>
-                        <option value="drama">Drama</option>
-                        <option value="fantazija">Fantazija</option>
-                        <option value="znanstvena fantastika">Znanstvena fantastika</option>
-                        <option value="biografija">Biografija</option>
-                    </select> */}
+                    <GenreSelect message={"Odaberite žanr"} value={genre} setGenre={setGenre} />
                 </div>
                 <div className="form-control">
                     <label>Broj primjeraka</label>
