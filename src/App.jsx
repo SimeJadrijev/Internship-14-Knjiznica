@@ -32,17 +32,9 @@ function App() {
       <Header />
       <AddBookForm onAdd={handleAddBook} />
       <BookList booksList={booksList} setBooksList={(value) => setBooksList(value)} />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
+      
+      <br /><br />
     </>
   )
 

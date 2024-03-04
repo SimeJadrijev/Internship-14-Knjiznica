@@ -53,8 +53,10 @@
 
 .image-container{
     display: flex;
-    width: 400px;
+    width: 250px;
+    overflow: hidden;
     justify-content: flex-start;
+    
 }
 
 .book-card-right{

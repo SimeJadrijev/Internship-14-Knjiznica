@@ -3,27 +3,35 @@ import data from "./data";
 
 const BookList = ({ booksList, setBooksList }) => {
 
-    // const sortedBooks = books.sort( (a,b) => {
-    //     if (a.author !== b.author)
-    //         return a.author.localeCompare(b.author);
-    //     else if (a.title !== b.title)
-    //         return a.title.localeCompare(b.title);
-    //     else
-    //         a.publicationYear - b.publicationYear;
-    // });
-
-//     const [searchQuery, setSearchQuery] = useState("");
-//   const [selectedGenre, setSelectedGenre] = useState("");
-
-//   const filteredBooks = books.filter((book) => {
-//     // Filtriranje po nazivu djela i imenu autora
-//     const titleAndAuthorMatch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//       book.author.toLowerCase().includes(searchQuery.toLowerCase());
+    const handleBorrowBook = (bookId) => {
+        const bookToBorrow = booksList.find(book => book.id === bookId);
+        if (bookToBorrow && bookToBorrow.numberOfCopies > 0) {
+            const updatedBooks = booksList.map(book => {
+                if (book.id === bookId) {
+                    return { ...book, numberOfCopies: book.numberOfCopies - 1 };
+                }
+                return book;
+            });
+            setBooksList(updatedBooks);
+            alert(`Knjiga "${bookToBorrow.title}" je uspješno posuđena.`);
+        } else {
+            alert("Nema dostupnih primjeraka ove knjige.");
+        }
+    };
     
-//     // Filtriranje po žanru
-//     const genreMatch = selectedGenre === "" || book.genre === selectedGenre;
-
-//     return titleAndAuthorMatch && genreMatch;
+    const handleReturnBook = (bookId) => {
+        const bookToReturn = booksList.find(book => book.id === bookId);
+        if (bookToReturn) {
+            const updatedBooks = booksList.map(book => {
+                if (book.id === bookId) {
+                    return { ...book, numberOfCopies: book.numberOfCopies + 1 };
+                }
+                return book;
+            });
+            setBooksList(updatedBooks);
+            alert(`Knjiga "${bookToReturn.title}" je uspješno vraćena.`);
+        }
+    };
 
     return (
         <>
@@ -53,8 +61,8 @@ const BookList = ({ booksList, setBooksList }) => {
                                 </div>
         
                                 <div className="book-card-bottom">
-                                    <button id="borrow-book-btn">vrati</button>
-                                    <button id="return-book-btn" disabled={book.numberOfCopies === 0}>posudi</button>
+                                <button id="borrow-book-btn" onClick={() => handleBorrowBook(book.id)}>posudi</button>
+                                <button id="return-book-btn" onClick={() => handleReturnBook(book.id)}>vrati</button>
                                 </div>
                             </div>
                         </div>;    
