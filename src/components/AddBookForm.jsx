@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { v4 as uuidv4 } from "uuid";
+import data from "./data";
 
 const AddBookForm = ({ onAdd }) => {
 
@@ -27,6 +28,7 @@ const AddBookForm = ({ onAdd }) => {
           numberOfCopies,
           imageUrl,
         };
+
         onAdd(newBook);
         setTitle("");
         setAuthor("");

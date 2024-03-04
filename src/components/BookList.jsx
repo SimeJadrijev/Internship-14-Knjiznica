@@ -1,5 +1,14 @@
 const BookList = ({ books }) => {
 
+    const Genre = {
+        ROMAN: "Roman",
+        POEZIJA: "Poezija",
+        DRAMA: "Drama",
+        FANTAZIJA: "Fantazija",
+        ZNANSTVENA_FANTASTIKA: "Znanstvena fantastika",
+        BIOGRAFIJA: "Biografija"
+    };
+
     // const sortedBooks = books.sort( (a,b) => {
     //     if (a.author !== b.author)
     //         return a.author.localeCompare(b.author);
@@ -36,8 +45,8 @@ const BookList = ({ books }) => {
                 />
                 <select /* value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)} */>
                     <option value="">Filtriraj po žanru</option>
-                    <option value="roman">Roman</option>
-                    <option value="poezija">Poezija</option>
+                    <option value="roman">{Genre.ROMAN}</option>
+                    <option value="poezija">{Genre.POEZIJA}</option>
                     <option value="drama">Drama</option>
                     <option value="fantazija">Fantazija</option>
                     <option value="znanstvena fantastika">Znanstvena fantastika</option>
@@ -127,7 +136,7 @@ const BookList = ({ books }) => {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </>
     )
