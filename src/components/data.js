@@ -6,7 +6,7 @@ const allBooks = [
         imageURL: "https://katalog.gkmm.hr/pagesResults/cover.aspx?bibliografskiZapisId=370018450&thumb=0&pozivatelj=rezultati",
         publisher: "Udruga crtani roman šou",
         publicationYear: "2023",
-        genre: "Roman",
+        genre: "ROMAN",
         numberOfCopies: 22
     },
     {
@@ -16,8 +16,8 @@ const allBooks = [
         imageURL: "https://upload.wikimedia.org/wikiquote/bs/2/21/Antigona.jpg",
         publisher: "Školska knjiga",
         publicationYear: "2021",
-        genre: "Drama",
-        numberOfCopies: 20
+        genre: "DRAMA",
+        numberOfCopies: 0
     },
     {
         id: "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b9a",
@@ -26,7 +26,7 @@ const allBooks = [
         imageURL: "https://www.knjigolov.hr/slike/201712311829310.zlatarovozla.jpg",
         publisher: "Knjigolov",
         publicationYear: "1999",
-        genre: "Fantazija",
+        genre: "FANTAZIJA",
         numberOfCopies: 10
     },
     // {

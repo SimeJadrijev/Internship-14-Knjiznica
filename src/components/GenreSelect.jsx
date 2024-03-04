@@ -7,9 +7,9 @@ const Genre = {
     BIOGRAFIJA: "Biografija"
 };
 
-const GenreSelect = ({ message, value, onChange }) => {
+const GenreSelect = ({ message, genre, setGenre }) => {
     return (
-        <select value={value} onChange={onChange}>
+        <select value={genre} onChange={(e) => setGenre(e.target.value)}>
             <option value="">{message}</option>
             {
                 Object.keys(Genre).map(key => {

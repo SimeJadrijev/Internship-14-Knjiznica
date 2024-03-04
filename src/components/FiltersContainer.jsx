@@ -5,6 +5,7 @@ import data from "./data";
 const FiltersContainer = ({ booksList, setBooksList }) => {
 
     const [ value, setValue ] = useState("");
+    const [ genre, setGenre ] = useState("");
     
     useEffect(() => {
 
@@ -19,11 +20,20 @@ const FiltersContainer = ({ booksList, setBooksList }) => {
                     splittedTitle.find(title => title.slice(0, value.length).toLowerCase() === value.toLowerCase()) ||
                     splittedAuthorName.find(author => author.slice(0, value.length).toLowerCase() === value.toLowerCase())
                     )
-                    return book;
+                {
+
+                    if (genre === "")
+                        return book;
+
+                    return book.genre === genre ? book : null;
+
+                }
     
-            });
+            }).filter(el => el !== null);
     
             if (value !== "")
+                setBooksList(filtered);
+            else if (genre !== "")
                 setBooksList(filtered);
             else 
                 setBooksList(data.allBooks);
@@ -32,7 +42,7 @@ const FiltersContainer = ({ booksList, setBooksList }) => {
 
         return () => clearTimeout(timeout);
 
-    }, [ value ]);
+    }, [ value, genre ]);
 
     return (
         <div className="filters-container">
@@ -42,9 +52,7 @@ const FiltersContainer = ({ booksList, setBooksList }) => {
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
             />
-            <GenreSelect message={"Filtriraj po žanru"}/>
-            
-            <button>Filtriraj</button>
+            <GenreSelect message={"Filtriraj po žanru"} genre={genre} setGenre={(value) => setGenre(value)} />
         </div>
     )
 }

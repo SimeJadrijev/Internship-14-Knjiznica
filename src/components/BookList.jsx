@@ -38,7 +38,9 @@ const BookList = ({ booksList, setBooksList }) => {
                     booksList.map(book => {
 
                         return <div key={book.id} className="book-card">
-                            <img src={book.imageURL} alt={`${book.title} image`} />
+                            <div className="image-container">
+                              <img src={book.imageURL} alt={`${book.title} image`} />
+                            </div>
                             <div className="book-card-right">
                                 <div className="book-card-top">
                                     <h3 className="id"><span>id:</span>{book.id}</h3>
@@ -52,7 +54,7 @@ const BookList = ({ booksList, setBooksList }) => {
         
                                 <div className="book-card-bottom">
                                     <button id="borrow-book-btn">vrati</button>
-                                    <button id="return-book-btn">posudi</button>
+                                    <button id="return-book-btn" disabled={book.numberOfCopies === 0}>posudi</button>
                                 </div>
                             </div>
                         </div>;    
