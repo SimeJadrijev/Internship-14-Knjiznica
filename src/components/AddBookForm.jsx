@@ -7,7 +7,7 @@ const AddBookForm = ({ onAdd }) => {
 
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+    const [imageURL, setImageURL] = useState("");
     const [publisher, setPublisher] = useState("");
     const [publicationYear, setPublicationYear] = useState("");
     const [genre, setGenre] = useState("");
@@ -27,7 +27,7 @@ const AddBookForm = ({ onAdd }) => {
           publicationYear,
           genre,
           numberOfCopies,
-          imageUrl,
+          imageURL,
         };
 
         onAdd(newBook);
@@ -37,7 +37,7 @@ const AddBookForm = ({ onAdd }) => {
         setPublicationYear("");
         setGenre("");
         setNumberOfCopies("");
-        setImageUrl("");
+        setImageURL("");
       };
 
     return (
@@ -80,7 +80,7 @@ const AddBookForm = ({ onAdd }) => {
                 </div>
                 <div className="form-control">
                     <label>Slika (URL)</label>
-                    <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
+                    <input type="text" value={imageURL} onChange={(e) => setImageURL(e.target.value)} />
                 </div>
                 <input type="submit" value="Dodaj knjigu" className="submit-button" />
             </form>
