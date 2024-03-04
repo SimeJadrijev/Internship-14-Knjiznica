@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { v4 as uuidv4 } from "uuid";
 import data from "./data";
+import GenreSelect from "./GenreSelect";
 
 const AddBookForm = ({ onAdd }) => {
 
@@ -62,7 +63,8 @@ const AddBookForm = ({ onAdd }) => {
                 </div>
                 <div className="form-control">
                     <label>Žanr</label>
-                    <select value={genre} onChange={(e) => setGenre(e.target.value)}>
+                    <GenreSelect message={"Odaberite žanr"} value={genre} onChange={(e) => setGenre(e.target.value)} />
+                    {/* <select value={genre} onChange={(e) => setGenre(e.target.value)}>
                         <option value="">Odaberite žanr</option>
                         <option value="roman">Roman</option>
                         <option value="poezija">Poezija</option>
@@ -70,7 +72,7 @@ const AddBookForm = ({ onAdd }) => {
                         <option value="fantazija">Fantazija</option>
                         <option value="znanstvena fantastika">Znanstvena fantastika</option>
                         <option value="biografija">Biografija</option>
-                    </select>
+                    </select> */}
                 </div>
                 <div className="form-control">
                     <label>Broj primjeraka</label>
