@@ -6,6 +6,7 @@
 
 This is a simple web application for maintaining a library system. User can see ```search for certain books``` based on their title or their author, ```add new books```, ```borrow``` and ```return``` books etc.
 
+The purpose of this project was to learn basic ```react concepts``` and its ```hooks```.
 The project was built in **React** framework.
 
 
